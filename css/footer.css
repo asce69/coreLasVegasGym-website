@@ -5,13 +5,13 @@ footer {
 }
 
 .copy-text:hover {
-    color: aqua;
-    cursor: pointer;
+  color: aqua;
+  cursor: pointer;
 }
 
 .no-hover:hover {
-    color: #aaa;
-    cursor: default;
+  color: #aaa;
+  cursor: default;
 }
 .social-icons {
   padding-top: 1em;
