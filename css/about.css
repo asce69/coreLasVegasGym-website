@@ -9,14 +9,46 @@
   gap: 50px;
 }
 
-.about-image {
-  flex: 1;
+.carousel {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 10px;
 }
 
-.about-image img {
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
   width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.carousel-buttons button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.carousel-buttons button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .about-text {
