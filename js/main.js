@@ -15,11 +15,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (containerId === "footer-container") {
           initializeEventListeners();
+        } else if (containerId === "about-container") {
+          initializeAbouteventListeners();
         }
       })
       .catch((error) => {
         console.error(`Error loading section ${sectionPath}:`, error);
       });
+  }
+
+  function initializeAbouteventListeners() {
+    let currentIndex = 0;
+    const images = document.querySelectorAll(".carousel-images img");
+    const prevBtn = document.querySelector(".prevBtn");
+    const nextBtn = document.querySelector(".nextBtn");
+    const totalSlides = images.length;
+
+    function updateCarousel() {
+      const carousel = document.getElementById("carouselImages");
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+    prevBtn.onclick = () => {
+      prevSlide();
+    };
+    nextBtn.onclick = () => {
+      nextSlide();
+    };
   }
 
   function initializeEventListeners() {
